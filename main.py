@@ -118,6 +118,13 @@ def root():
     return {"status": "ok", "service": "Attendance Dashboard API"}
 
 
+@app.get("/debug/office-keys")
+def debug_office_keys():
+    """TEMPORARY — lists registered office key env var names only (not values)."""
+    names = [k for k in os.environ if k.startswith("OFFICE_KEY_")]
+    return {"registered_office_key_vars": names}
+
+
 @app.post("/auth/login")
 def login(req: LoginRequest):
     if req.password != VIEWER_PASSWORD:
