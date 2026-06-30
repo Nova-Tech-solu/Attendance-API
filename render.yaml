@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: attendance-dashboard-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: VIEWER_PASSWORD
+        value: changeme123          # ← change this
+      - key: ALLOWED_ORIGINS
+        value: https://yourusername.github.io  # ← change to your GitHub Pages URL
+      # Add one per office — value must be sha256 of the actual key
+      - key: OFFICE_KEY_PROVOST
+        value: PASTE_SHA256_HASH_HERE
+      - key: OFFICE_KEY_REGISTRY
+        value: PASTE_SHA256_HASH_HERE
+      - key: OFFICE_KEY_BURSARY
+        value: PASTE_SHA256_HASH_HERE
+      # Add more offices here as needed
