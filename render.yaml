@@ -8,10 +8,10 @@ services:
       - key: VIEWER_PASSWORD
         value: changeme123          # ← change this
       - key: ALLOWED_ORIGINS
-        value: https://yourusername.github.io  # ← change to your GitHub Pages URL
+        value: https://nova-tech-solu.github.io/NovaTech/ # ← change to your GitHub Pages URL
       # Add one per office — value must be sha256 of the actual key
       - key: OFFICE_KEY_PROVOST
-        value: PASTE_SHA256_HASH_HERE
+        value: 632f156269eedf64315e977bd6efbf82e0db809b782fffd38aee623dfc06b47f
       - key: OFFICE_KEY_REGISTRY
         value: PASTE_SHA256_HASH_HERE
       - key: OFFICE_KEY_BURSARY
